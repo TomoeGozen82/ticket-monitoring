@@ -1,6 +1,6 @@
 # ticket-monitoring
 
-[![docker](https://github.com/aculix/ticket-monitoring/actions/workflows/docker.yml/badge.svg)](https://github.com/aculix/ticket-monitoring/actions/workflows/docker.yml)
+[![docker](https://github.com/TomoeGozen82/ticket-monitoring/actions/workflows/docker.yml/badge.svg)](https://github.com/TomoeGozen82/ticket-monitoring/actions/workflows/docker.yml)
 
 Watches [District](https://www.district.in) and [BookMyShow](https://in.bookmyshow.com)
 showtimes and sends a max-priority push to your phone the second tickets go on sale for the
@@ -58,7 +58,7 @@ docker run -d --name ticket-monitoring \
   --env-file .env \
   -p 4733:4733 \
   -v ticket-monitoring-data:/data \
-  ghcr.io/aculix/ticket-monitoring:latest
+  ghcr.io/TomoeGozen82/ticket-monitoring:latest
 ```
 
 ```bash
@@ -72,7 +72,7 @@ across restarts. Drop the `-p` flag if you don't want the status endpoint reacha
 pull the image again and recreate the container:
 
 ```bash
-docker pull ghcr.io/aculix/ticket-monitoring:latest
+docker pull ghcr.io/TomoeGozen82/ticket-monitoring:latest
 docker rm -f ticket-monitoring   # then re-run the docker run command above
 ```
 
@@ -83,7 +83,7 @@ Only `:latest` is published, so that's always the current build of `main`.
 Handy if you'd rather keep the config in a file you can edit in place:
 
 ```bash
-git clone https://github.com/aculix/ticket-monitoring.git
+git clone https://github.com/TomoeGozen82/ticket-monitoring.git
 cd ticket-monitoring
 cp .env.example .env      # edit it, see "Finding your IDs" below
 docker compose up -d      # add --build to build locally instead of pulling
